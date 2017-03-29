@@ -6,8 +6,18 @@ if [ ! -d "${DIR}" ]; then
 fi
 
 if [ -z ${TEXMF_ROOT} ]; then
-  echo "TEXTMF_ROOT not set. Exiting"
+  echo "TEXTMF_ROOT not set. Exiting."
   exit
+fi
+
+if [ ! -d ${TEXMF_ROOT}/tex/latex/selfCrafted ]; then
+  mkdir -p ${TEXMF_ROOT}/tex/latex/selfCrafted
+  if [ $? -ne 0 ]; then
+    echo "Could not create selfCrafted directory. Exiting."
+    exit
+  else
+    echo "Created selfCrafted directory."
+  fi
 fi
 
 PACKAGES_PATH="${SHARED_ROOT}/latex/src/packages"
