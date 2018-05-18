@@ -19,6 +19,6 @@ fi
 #Copy to ${1} and then edit required places, to change proto to FILE
 cp -r ${SHARED_ROOT}/latex/src/protoDir/* ${1}
 cd ${1}
-mv proto.tex ${2}.tex
+mv main.tex ${2}.tex
 sed -i -e "s/proto/${2}/g" makefile
 cd -
