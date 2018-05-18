@@ -2,10 +2,10 @@
 
 all: pdf
 
-pdf: proto.tex
+pdf: main.tex
 	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" \
-		-use-make proto.tex -jobname=proto -pv
+		-use-make main.tex -jobname=main -pv
 
 clean:
-	latexmk -jobname=proto -CA -bibtex
+	latexmk -jobname=main -CA -bibtex
 

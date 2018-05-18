@@ -1,18 +1,25 @@
-% A growing list of good custom commands for the benefit of all latex
-% documents
-
-\usepackage{mathtools}
-
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{customCommands}
+\usepackage{xifthen}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
 
-\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
-\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
-\DeclarePairedDelimiter{\tuple}{\langle}{\rangle}
+%\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+%\usepackage{amsmath}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
 
+\newcommand{\crampedsection}[1]{\noindent \emph{#1}}
 \newcommand{\lab}[1]{\mathbf{\bar{#1}}}
+\newcommand{\tuple}[1]{\langle{}#1\rangle{}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\inner}[2]{\langle{}#1,#2\rangle{}}
 
-\newcommand{\crampedsection}[1]{\par \noindent \emph{#1} \par}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
 
 \newenvironment{tight_itemize}{
 \begin{itemize}
